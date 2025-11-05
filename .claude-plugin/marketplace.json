@@ -1,0 +1,16 @@
+{
+  "name": "skills",
+  "version": "0.2.0",
+  "owner": {
+    "name": "young"
+  },
+  "plugins": [
+    {
+      "name": "code-skills",
+      "description": "Code standards collection for writing, reviewing, and refactoring across multiple languages and frameworks.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/react"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Claude Code
+.claude/settings.local.json
+.claude/cache/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+node_modules

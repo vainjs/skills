@@ -1,0 +1,26 @@
+{
+  "name": "skills",
+  "private": "true",
+  "description": "A collection of code standards skills for AI coding assistants.",
+  "homepage": "https://github.com/vainjs/skills#readme",
+  "bugs": {
+    "url": "https://github.com/vainjs/skills/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vainjs/skills.git"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
+  }
+}
