@@ -16,9 +16,10 @@ Or add marketplace to Claude Code:
 
 ## Available Skills
 
-| Skill                          | Description                     |
-| ------------------------------ | ------------------------------- |
-| [react](skills/react/SKILL.md) | TypeScript/React code standards |
+| Skill                            | Description                        |
+| -------------------------------- | ---------------------------------- |
+| [react](skills/react/SKILL.md)   | TypeScript/React code standards    |
+| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint)  |
 
 ## Project Structure
 
@@ -26,7 +27,9 @@ Or add marketplace to Claude Code:
 skills/
 ├── .claude-plugin/          # Plugin registry
 └── skills/                  # Skill collection
-    └── react/
+    ├── react/
+    │   └── SKILL.md
+    └── commit/
         └── SKILL.md
 ```
 
