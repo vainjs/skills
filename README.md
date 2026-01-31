@@ -12,14 +12,16 @@ Or add marketplace to Claude Code:
 
 ```bash
 /plugin marketplace add vainjs/skills
+
+/plugin install code-skills@vainjs-skills
 ```
 
 ## Available Skills
 
-| Skill                            | Description                        |
-| -------------------------------- | ---------------------------------- |
-| [react](skills/react/SKILL.md)   | TypeScript/React code standards    |
-| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint)  |
+| Skill                            | Description                       |
+| -------------------------------- | --------------------------------- |
+| [react](skills/react/SKILL.md)   | TypeScript/React code standards   |
+| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint) |
 
 ## Project Structure
 
