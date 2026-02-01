@@ -1,6 +1,6 @@
-# Code Skills
+# Vainjs Skills
 
-A collection of code standards skills for AI coding assistants.
+A collection of [Agent Skills](https://agentskills.io/what-are-skills) based on personal best practices from real-world projects. Reflects my own coding style — use it if you find it helpful.
 
 ## Quick Start
 
@@ -18,22 +18,11 @@ Or add marketplace to Claude Code:
 
 ## Available Skills
 
-| Skill                            | Description                       |
-| -------------------------------- | --------------------------------- |
-| [react](skills/react/SKILL.md)   | TypeScript/React code standards   |
-| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint) |
-
-## Project Structure
-
-```
-skills/
-├── .claude-plugin/          # Plugin registry
-└── skills/                  # Skill collection
-    ├── react/
-    │   └── SKILL.md
-    └── commit/
-        └── SKILL.md
-```
+| Skill                            | Description                                 |
+| -------------------------------- | ------------------------------------------- |
+| [react](skills/react/SKILL.md)   | TypeScript/React code standards             |
+| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint)           |
+| [vainjs](skills/vainjs/SKILL.md) | Scaffold npm packages and Chrome extensions |
 
 ## Contributing
 

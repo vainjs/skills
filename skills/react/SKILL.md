@@ -1,6 +1,6 @@
 ---
 name: react
-description: TypeScript/React code standards baseline. Use when writing, reviewing, or refactoring React components, hooks, or TypeScript code. Applies to component generation, code review, naming conventions, type definitions, and React best practices.
+description: TypeScript/React code standards. Use when writing or reviewing React components, hooks, or TypeScript code.
 ---
 
 ## Standards Detection

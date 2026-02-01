@@ -10,7 +10,7 @@
       "description": "Code standards collection for writing, reviewing, and refactoring across multiple languages and frameworks.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/react", "./skills/commit"]
+      "skills": ["./skills/react", "./skills/commit", "./skills/vainjs"]
     }
   ]
 }
