@@ -59,10 +59,13 @@ chore(deps): upgrade React to v19
 
 ## Workflow
 
-1. Run `git add -A` to stage all changes
-2. Run `git status` and `git diff --staged` to review changes
-3. Identify the primary change type
-4. Determine scope (if applicable)
-5. Write concise description in imperative mood
-6. Add body for complex changes
-7. Include footer for breaking changes or issue references
+1. Run `git status` to see all changes; if unrelated changes exist, suggest splitting into separate commits
+2. Stage relevant files with `git add <files>` (avoid `git add -A` to prevent accidentally staging secrets or large files)
+3. Run `git diff --staged` to review what will be committed
+4. Generate commit message following the format above
+5. End your response with only the commit message — do NOT execute `git commit`. Example:
+
+   `feat(auth): add OAuth2 login`
+
+   This lets prompt suggestion prefill it for the user to review and edit.
+6. On the next turn, execute `git commit -m "<confirmed message>"`

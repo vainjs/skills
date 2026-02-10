@@ -36,10 +36,26 @@ Search for ESLint config (`.eslintrc.*`, `eslint.config.*`, `package.json`). If 
 - Early returns for guards
 - Conditional rendering with `&&`
 
+### Custom Components
+
+```typescript
+type ComponentNameProps = {}
+
+export const ComponentName: FC<ComponentNameProps> = props => {
+  const {} = props
+}
+
+ComponentName.displayName = 'ComponentName'
+```
+
 ### Custom Hooks
 
 ```typescript
-export function useHookName(options: UseHookNameOptions) {}
+export function useHookName(options: UseHookNameOptions) {
+  const { a, b } = options
+  // a, b
+  return {}
+}
 ```
 
 ### Code Style
