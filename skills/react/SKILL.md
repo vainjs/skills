@@ -64,3 +64,47 @@ export function useHookName(options: UseHookNameOptions) {
 - Avoid `any` → use `unknown` or specific types
 - Prefer `const` over `let`
 - Single responsibility functions
+
+## Directory Structure
+
+```
+src/
+├── hooks/                    # shared hooks
+│   ├── index.ts              # re-exports all hooks (single import entry)
+│   └── useXxx.ts            # one hook per file, named useXxx
+├── components/               # shared components
+│   ├── index.ts              # re-exports all components
+│   ├── Button/
+│   │   ├── index.tsx         # exports Button component
+│   │   └── index.module.less
+│   └── XxxCard/
+│       ├── index.tsx         # exports XxxCard component
+│       └── index.module.less
+└── pages/                    # organized by page module
+    └── <Name>/               # <Name> = main component name (e.g., UserProfile)
+        ├── index.tsx         # exports the page's main component
+        ├── index.module.less
+        ├── components/       # page-private components (optional)
+        │   ├── index.ts     # re-exports this page's components
+        │   └── ...
+        └── hooks/           # page-private hooks (optional)
+            ├── index.ts     # re-exports this page's hooks
+            └── ...
+```
+
+**Conventions:**
+
+1. **`index.ts` for unified exports** — keeps imports clean: `import { Button } from '@/components'`
+2. **Named exports only** — avoid default exports from shared components
+3. **Directory name = Component name** — `pages/UserProfile/index.tsx` exports `UserProfile`
+4. **Co-locate page-specific code** — complex pages may have their own `components/` and `hooks/`
+
+**Import examples:**
+```typescript
+// Good
+import { Button, useAuth } from '@/components'
+import { UserProfile } from '@/pages/UserProfile'
+
+// Avoid
+import Button from '@/components/Button'  // inconsistent with index.ts pattern
+```
