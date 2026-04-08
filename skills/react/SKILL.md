@@ -1,6 +1,6 @@
 ---
 name: react
-description: TypeScript/React code standards. Use when writing or reviewing React components, hooks, or TypeScript code.
+description: TypeScript/React code standards for writing and reviewing React components, hooks, and TypeScript code. Make sure to use this skill whenever the user mentions React, React component, functional component, hook (useState, useEffect, useCallback, useMemo, custom hook), TypeScript type/interface, FC, Props, state management, or asks to write, review, or refactor any React or TypeScript code — even if they don't explicitly say "skill" or "standards".
 ---
 
 ## Standards Detection

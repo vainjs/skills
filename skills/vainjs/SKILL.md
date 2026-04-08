@@ -1,6 +1,6 @@
 ---
 name: vainjs
-description: Scaffold projects with vainjs conventions. Use when initializing npm packages or Chrome extensions.
+description: Scaffold projects with vainjs conventions for npm packages and Chrome extensions. Make sure to use this skill whenever the user mentions initializing an npm package, creating a new project with Vite or Rollup, setting up a Chrome extension (Manifest V3), scaffolding a library, or running `npm init`, `pnpm create`, or similar scaffold commands — even if they don't explicitly ask for vainjs conventions.
 ---
 
 ## Supported Templates

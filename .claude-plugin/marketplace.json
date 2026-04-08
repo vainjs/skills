@@ -1,16 +1,23 @@
 {
   "name": "vainjs-skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "owner": {
     "name": "young"
   },
   "plugins": [
     {
       "name": "code-skills",
-      "description": "Code standards collection for writing, reviewing, and refactoring across multiple languages and frameworks.",
+      "description": "Code standards and project scaffolding skills for React/TypeScript development, Conventional Commits, and npm/Chrome extension initialization.",
       "source": "./",
       "strict": false,
       "skills": ["./skills/react", "./skills/commit", "./skills/vainjs"]
+    },
+    {
+      "name": "openclaw-skills",
+      "description": "Feishu news card notification skill for sending push notifications, news updates, and data reports via Feishu/Lark.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/feishu-news-card"]
     }
   ]
 }

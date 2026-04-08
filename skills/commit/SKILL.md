@@ -1,51 +1,31 @@
 ---
 name: commit
-description: Generate git commits following Conventional Commits (commitlint). Use when user wants to commit changes.
+description: Generate git commits following Conventional Commits (commitlint) format. Make sure to use this skill whenever the user mentions git commit, commit changes, make a commit, conventional commits, commitlint, or asks to commit any changes — even if they don't explicitly say "skill" or "Conventional Commits". This skill is especially useful when the user says things like "commit this", "commit my changes", "git add and commit", or wants a properly formatted commit message.
 ---
 
-## Commit Message Format
+## Format
 
 ```
 <type>(<scope>): <description>
-
 [optional body]
-
 [optional footer(s)]
 ```
 
 ## Types
 
-| Type       | Description                                      |
-| ---------- | ------------------------------------------------ |
-| `feat`     | New feature                                      |
-| `fix`      | Bug fix                                          |
-| `docs`     | Documentation only                               |
-| `style`    | Formatting, missing semicolons (no code change)  |
-| `refactor` | Code change that neither fixes nor adds features |
-| `perf`     | Performance improvement                          |
-| `test`     | Adding or correcting tests                       |
-| `build`    | Build system or external dependencies            |
-| `ci`       | CI configuration files and scripts               |
-| `chore`    | Other changes that don't modify src or test      |
-| `revert`   | Reverts a previous commit                        |
+`feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
 ## Rules
 
 - **type**: Required, lowercase, from list above
-- **scope**: Optional, lowercase, describes affected area (e.g., `api`, `auth`, `ui`)
-- **description**: Required, lowercase start, no period at end, imperative mood, max 72 chars
+- **scope**: Optional. Only include when it clearly adds context (e.g., `feat(ui):` vs `feat:`). Use lowercase, kebab-case if multi-word.
+- **description**: Required, lowercase start, no period at end, imperative mood (say what the change does, not what it did), max 72 chars
 - **body**: Optional, wrap at 100 chars, explain "what" and "why" (not "how")
-- **footer**: Optional, for breaking changes (`BREAKING CHANGE:`) or issue refs (`Closes #123`)
+- **footer**: Optional, for breaking changes (`BREAKING CHANGE:`) or issue refs (`Closes #123`, `Fixes #456`)
 
 ## Breaking Changes
 
-Add `!` after type/scope or `BREAKING CHANGE:` in footer:
-
-```
-feat(api)!: change authentication endpoint response format
-
-BREAKING CHANGE: The /auth endpoint now returns a JWT token instead of session ID.
-```
+Append `!` to type/scope, or add `BREAKING CHANGE:` footer.
 
 ## Examples
 
@@ -53,7 +33,7 @@ BREAKING CHANGE: The /auth endpoint now returns a JWT token instead of session I
 feat(auth): add OAuth2 login support
 fix(ui): resolve button alignment on mobile
 docs: update API documentation
-refactor(core): simplify error handling logic
+refactor(auth): simplify error handling logic
 chore(deps): upgrade React to v19
 ```
 
@@ -63,9 +43,8 @@ chore(deps): upgrade React to v19
 2. Stage relevant files with `git add <files>` (avoid `git add -A` to prevent accidentally staging secrets or large files)
 3. Run `git diff --staged` to review what will be committed
 4. Generate commit message following the format above
-5. End your response with only the commit message — do NOT execute `git commit`. Example:
+5. Output the commit message on its own line at the END of your response — nothing should follow it:
 
-   `feat(auth): add OAuth2 login`
+   feat(auth): add OAuth2 login
 
-   This lets prompt suggestion prefill it for the user to review and edit.
-6. On the next turn, execute `git commit -m "<confirmed message>"`
+6. Wait for user confirmation or prompt suggestion prefill. Do NOT run `git commit` yourself.
