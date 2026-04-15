@@ -46,4 +46,4 @@ chore(deps): upgrade React to v19
 
    feat(auth): add OAuth2 login
 
-4. Wait for user confirmation or prompt suggestion prefill. Do NOT run `git commit` yourself.
+4. Wait for user confirmation before executing `git commit`. Do NOT run `git commit` yourself.

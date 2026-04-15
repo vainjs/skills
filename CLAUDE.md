@@ -9,6 +9,10 @@ Code standards skills for AI coding assistants. Skills are distributed via `.cla
 skills/<name>/SKILL.md            # Skill file (YAML frontmatter + Markdown body)
 ```
 
+## Commit Convention
+
+Use `feat` type for skill documentation changes (`skills/<name>/SKILL.md`), as they represent functional improvements to the skill.
+
 ## Adding a New Skill
 
 1. Create `skills/<name>/SKILL.md` with `name` and `description` in frontmatter
