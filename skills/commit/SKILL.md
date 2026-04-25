@@ -1,7 +1,11 @@
 ---
 name: commit
-description: Generate git commits following Conventional Commits (commitlint) format. Make sure to use this skill whenever the user mentions git commit, commit changes, make a commit, conventional commits, commitlint, or asks to commit any changes — even if they don't explicitly say "skill" or "Conventional Commits". This skill is especially useful when the user says things like "commit this", "commit my changes", "git add and commit", or wants a properly formatted commit message.
+description: Generate git commits following Conventional Commits (commitlint) format. Make sure to use this skill whenever the user mentions git commit, commit changes, make a commit, conventional commits, commitlint, or asks to commit any changes — even if they do not explicitly say "skill" or "Conventional Commits". This skill is especially useful when the user says things like "commit this", "commit my changes", "git add and commit", or wants a properly formatted commit message.
 ---
+
+## Enforcement
+
+**This skill MUST be followed exactly. Steps MUST execute in order. Do not skip, merge, or reorder any step.**
 
 ## Format
 
@@ -17,10 +21,9 @@ description: Generate git commits following Conventional Commits (commitlint) fo
 
 ## Rules
 
-- **git user**: Always use the user's git config (user.name, user.email). Do NOT use AI-authored credentials. Check `git config --list` first to verify the correct user is configured.
-- **type**: Required, lowercase, from list above
-- **scope**: Optional. Only include when it clearly adds context (e.g., `feat(ui):` vs `feat:`). Use lowercase, kebab-case if multi-word.
-- **description**: Required, lowercase start, no period at end, imperative mood (say what the change does, not what it did), max 72 chars
+- **type**: Required, lowercase, from the list above
+- **scope**: Optional. Only include when it clearly adds context (e.g. `feat(ui):` vs `feat:`). Lowercase, kebab-case if multi-word.
+- **description**: Required, lowercase start, no period at end, imperative mood (what the change does, not what it did), max 72 chars
 - **body**: Optional, wrap at 100 chars, explain "what" and "why" (not "how")
 - **footer**: Optional, for breaking changes (`BREAKING CHANGE:`) or issue refs (`Closes #123`, `Fixes #456`)
 
@@ -38,12 +41,13 @@ refactor(auth): simplify error handling logic
 chore(deps): upgrade React to v19
 ```
 
-## Workflow
+## Workflow — Execute in Exact Order
 
-1. Stage all changes with `git add -A`
-2. Generate commit message following the format above
-3. Output the commit message on its own line at the END of your response — nothing should follow it:
+1. **MANDATORY** — Run `git config --list | grep -E "^user\."`. Verify user.name and user.email are present and correct. If missing or wrong, **abort and warn the user**. Do not proceed. **FORBIDDEN: Do NOT add `Co-Authored-By` or any AI credentials.**
+2. **MANDATORY** — Stage all changes with `git add -A`. Do not skip.
+3. **MANDATORY** — Generate the commit message in Conventional Commits format.
+4. **MANDATORY** — Output the commit message **on its own line at the END of your response**. Nothing — no explanation, no commentary, no emoji — should follow it:
 
    feat(auth): add OAuth2 login
 
-4. Wait for user confirmation before executing `git commit`. Do NOT run `git commit` yourself.
+5. **MANDATORY** — Wait for user confirmation. Do NOT run `git commit` yourself. If the user confirms, run `git commit` with the staged changes. If the user declines, stop.

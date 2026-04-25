@@ -23,3 +23,4 @@ Thumbs.db
 .cache/
 node_modules
 *.local.json
+.omc
