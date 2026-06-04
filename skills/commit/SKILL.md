@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Generate git commits following Conventional Commits (commitlint) format. Make sure to use this skill whenever the user mentions git commit, commit changes, make a commit, conventional commits, commitlint, or asks to commit any changes — even if they do not explicitly say "skill" or "Conventional Commits". This skill is especially useful when the user says things like "commit this", "commit my changes", "git add and commit", or wants a properly formatted commit message.
+description: Mandatory workflow for any task that generates a git commit or commit message. Use this skill whenever the user asks to commit changes, stage and commit, create a commit, or write a Conventional Commits/commitlint message, even if they do not explicitly say "skill".
 ---
 
 ## Enforcement
@@ -43,11 +43,11 @@ chore(deps): upgrade React to v19
 
 ## Workflow — Execute in Exact Order
 
-1. **MANDATORY** — Run `git config --list | grep -E "^user\."`. Verify user.name and user.email are present and correct. If missing or wrong, **abort and warn the user**. Do not proceed. **FORBIDDEN: Do NOT add `Co-Authored-By` or any AI credentials.**
-2. **MANDATORY** — Stage all changes with `git add -A`. Do not skip.
+1. **MANDATORY** — Run exactly `git add -A`. Before confirmation, no other `git` command is allowed, including `git config`, `git status`, `git diff`, or `git log`.
+2. **MANDATORY** — Abort if the commit would use an AI author name/email, AI credentials, `Co-Authored-By`, or `--author` with an AI identity.
 3. **MANDATORY** — Generate the commit message in Conventional Commits format.
 4. **MANDATORY** — Output the commit message **on its own line at the END of your response**. Nothing — no explanation, no commentary, no emoji — should follow it:
 
    feat(auth): add OAuth2 login
 
-5. **MANDATORY** — Wait for user confirmation. Do NOT run `git commit` yourself. If the user confirms, run `git commit` with the staged changes. If the user declines, stop.
+5. **MANDATORY** — Wait for user confirmation. If confirmed, run only the direct `git commit` command for the generated message. If declined, stop.
