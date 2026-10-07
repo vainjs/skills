@@ -7,10 +7,10 @@
   "plugins": [
     {
       "name": "code-skills",
-      "description": "Code standards and project scaffolding skills for React/TypeScript development, Conventional Commits, and npm/Chrome extension initialization.",
+      "description": "General code style with TypeScript/React guidance, Conventional Commits, and npm/Chrome extension scaffolding skills.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/react", "./skills/commit", "./skills/vainjs"]
+      "skills": ["./skills/code-style", "./skills/commit", "./skills/vainjs"]
     },
     {
       "name": "openclaw-skills",

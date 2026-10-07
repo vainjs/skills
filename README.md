@@ -18,11 +18,11 @@ Or add marketplace to Claude Code:
 
 ## Available Skills
 
-| Skill                            | Description                                 |
-| -------------------------------- | ------------------------------------------- |
-| [react](skills/react/SKILL.md)   | TypeScript/React code standards             |
-| [commit](skills/commit/SKILL.md) | Conventional Commits (commitlint)           |
-| [vainjs](skills/vainjs/SKILL.md) | Scaffold npm packages and Chrome extensions |
+| Skill                                    | Description                                 |
+| ---------------------------------------- | ------------------------------------------- |
+| [code-style](skills/code-style/SKILL.md) | Language-agnostic code style conventions    |
+| [commit](skills/commit/SKILL.md)         | Conventional Commits (commitlint)           |
+| [vainjs](skills/vainjs/SKILL.md)         | Scaffold npm packages and Chrome extensions |
 
 ## Contributing
 
