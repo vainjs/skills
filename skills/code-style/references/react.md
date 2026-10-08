@@ -26,6 +26,7 @@
 - Expose refs for imperative interfaces according to the project's convention.
 - Use default exports for page entry components and business-module entry components, and named exports for shared components. Preserve the export interfaces used by existing consumers.
 - Place pure functions and constants related to the current component above it. Extract reusable code into files with the corresponding responsibilities.
+- Keep the page component's JSX structure intact. Avoid breaking it into overly granular child components; extract a child component only when it is sufficiently complex to justify being separated. Prefer hooks to separate logic by responsibility, while keeping the page component as the entry point so the page structure and the relationships among its child components and hooks remain clear.
 - Use early returns for guards. For single-branch conditional rendering, use an explicit boolean condition with `&&`.
 
 ## Memoization
